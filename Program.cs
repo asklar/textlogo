@@ -12,6 +12,14 @@ namespace logo
         public Turtle(int width, int height)
         {
             buffer = new char[width, height];
+            /* Without the next block, Terminal does not print the output correctly (skips instead of printing spaces) */
+
+            // for (var y = 0; y < buffer.GetLength(1); y++) 
+            // {
+            //     for (var x = 0; x < buffer.GetLength(0); x++) {
+            //         buffer[x, y] = ' ';
+            //     }
+            // }
             X = width / 2;
             Y = height / 2;
             Direction = MathF.PI / 2;
@@ -44,7 +52,7 @@ namespace logo
             var s = MathF.Sin(Direction);
             for (var i=0; i < n; i++)
             {
-                Console.WriteLine($"{X}, {Y} -> {(int)(X+0.5f)}, {(int)(Y+0.5f)}  ({Direction * 180/MathF.PI})");
+                System.Diagnostics.Debug.WriteLine($"{X}, {Y} -> {(int)(X+0.5f)}, {(int)(Y+0.5f)}  ({Direction * 180/MathF.PI})");
                 MarkCurrent();
                 X += c;
                 Y -= s;
@@ -92,8 +100,8 @@ namespace logo
     {
         static void Main(string[] args)
         {
-            Turtle t = new Turtle(80, 80);
-            t.Polygon(3, 20);
+            Turtle t = new Turtle(40, 20);
+            t.Polygon(3, 10);
             // t.RotateRight(MathF.PI / 4);
             // t.Forward(6);
             t.PrintBuffer();
