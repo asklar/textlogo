@@ -4,5 +4,16 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.9.0" />
+    <PackageReference Include="Antlr4BuildTasks" Version="8.9">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Antlr4 Include="Logo.g4">
+      <Package>logo</Package>
+    </Antlr4>
+  </ItemGroup>
+  
 </Project>

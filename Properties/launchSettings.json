@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "logo": {
+      "commandName": "Project",
+      "commandLineArgs": "\"PU LT 10 BK 10 PD REPEAT (3) [ RT 16 R (360/3)] RT 10 BK 10 LT 1 FD 10 LT 1 BK 10\""
+    }
+  }
+}
